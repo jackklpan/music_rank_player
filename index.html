@@ -337,7 +337,7 @@
               this.nowMusicPlayed = false;
               player.loadVideoById(jsonData['data']['YoutubeVideoId']);
               console.log(jsonData['data']['YoutubeVideoId']);
-              this.checkNowMusicPlayedTimer = setTimeout(this.checkNowMusicPlayed, 3000);
+              this.checkNowMusicPlayedTimer = setTimeout(this.checkNowMusicPlayed, 10000);
             } else { //not found
               this.searchPlaylistMusic();
             }
