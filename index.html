@@ -265,11 +265,11 @@
           clearTimeout(this.checkNowMusicPlayedTimer);
           this.checkNowMusicPlayedTimer = null;
         },
-        initPlayListFromItunes: function(genreId=null) {
+        initPlayListFromItunes: function(genreId) {
           this.clearData();
 
           var baseUrl = "https://itunes.apple.com/tw/rss/topsongs/limit=100/";
-          if(genreId) { //1253國語流行
+          if(genreId != undefined) { //1253國語流行
             baseUrl += "genre="+genreId+'/';
           }
           $.getJSON(baseUrl+ "json?l=zh",
@@ -304,11 +304,11 @@
           clearTimeout(this.checkNowMusicPlayedTimer);
           this.searchPlaylistMusic(index);
         },
-        searchPlaylistMusic: function(index=null) {
+        searchPlaylistMusic: function(index) {
           if(!player || !player.loadVideoById) {
             setTimeout(this.searchPlaylistMusic, 100);
           } else {
-            if(index!=null) {
+            if(index != undefined) {
               this.nowPlayMusicIdx = index;
             }
             if(this.playlistMusicName.length > 0 && this.playlistMusicName.length > this.nowPlayMusicIdx) {
