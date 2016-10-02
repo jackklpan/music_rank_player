@@ -174,7 +174,7 @@
       <div id="playlist" class="col-md-4 col-xs-12 playlist">
         <div class="row" v-for="(info, index) in playlistInfo" v-cloak>
 
-          <button style="width:100%" v-on:click="clickMusic(index)" v-bind:class="{active: index==nowPlayMusicIdx-1}">
+          <button style="width:100%" v-on:click="clickMusic(index)" v-bind:class="{active: index==nextPlayMusicIdx-1}">
             <div class="col-md-1 col-xs-1">
               <p>{{index+1}}</p>
             </div>
@@ -251,7 +251,7 @@
     var vueApp = new Vue({
       el: '#vueApp',
       data: {
-        nowPlayMusicIdx: 0,
+        nextPlayMusicIdx: 0,
         playlistMusicName: [],
         playlistInfo: [],
 
@@ -259,15 +259,15 @@
         checkNowMusicPlayedTimer: null
       },
       watch: {
-        'nowPlayMusicIdx': function(val, oldVal) {
-          if(this.playlistMusicName.length > val) {
-            document.title = this.playlistMusicName[val];
+        'nextPlayMusicIdx': function(val, oldVal) {
+          if(this.playlistMusicName.length > val-1) {
+            document.title = this.playlistMusicName[val-1];
           }
         },
       },
       methods: {
         clearData: function() {
-          this.nowPlayMusicIdx = 0;
+          this.nextPlayMusicIdx = 0;
           this.playlistMusicName = [];
           this.playlistInfo = [];
           this.nowMusicPlayed = false;
@@ -319,13 +319,13 @@
             setTimeout(this.searchPlaylistMusic, 100);
           } else {
             if(index != undefined) {
-              this.nowPlayMusicIdx = index;
+              this.nextPlayMusicIdx = index;
             }
-            if(this.playlistMusicName.length > 0 && this.playlistMusicName.length > this.nowPlayMusicIdx) {
-              console.log(this.nowPlayMusicIdx);
-              console.log(this.playlistMusicName[this.nowPlayMusicIdx]);
-              this.search(this.playlistMusicName[this.nowPlayMusicIdx]);
-              this.nowPlayMusicIdx = this.nowPlayMusicIdx + 1;
+            if(this.playlistMusicName.length > 0 && this.playlistMusicName.length > this.nextPlayMusicIdx) {
+              console.log(this.nextPlayMusicIdx);
+              console.log(this.playlistMusicName[this.nextPlayMusicIdx]);
+              this.search(this.playlistMusicName[this.nextPlayMusicIdx]);
+              this.nextPlayMusicIdx = this.nextPlayMusicIdx + 1;
             }
           }
         },
