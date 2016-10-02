@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- loading css -->
+  <style>
+    .cssload-spin-box {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 100%;
+      box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      -o-box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      -ms-box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      -webkit-box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      -moz-box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      animation: cssload-spin ease infinite 4.6s;
+      -o-animation: cssload-spin ease infinite 4.6s;
+      -ms-animation: cssload-spin ease infinite 4.6s;
+      -webkit-animation: cssload-spin ease infinite 4.6s;
+      -moz-animation: cssload-spin ease infinite 4.6s;
+    }
+
+
+
+    @keyframes cssload-spin {
+      0%,
+      100% {
+        box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      }
+      25% {
+        box-shadow: -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73);
+      }
+      50% {
+        box-shadow: -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223);
+      }
+      75% {
+        box-shadow: 26px -26px #dfdfdf, 26px 26px #4f4d49, -26px 26px #dfdfdf, -26px -26px #4f4d49;
+      }
+    }
+
+    @-o-keyframes cssload-spin {
+      0%,
+      100% {
+        box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      }
+      25% {
+        box-shadow: -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73);
+      }
+      50% {
+        box-shadow: -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223);
+      }
+      75% {
+        box-shadow: 26px -26px #dfdfdf, 26px 26px #4f4d49, -26px 26px #dfdfdf, -26px -26px #4f4d49;
+      }
+    }
+
+    @-ms-keyframes cssload-spin {
+      0%,
+      100% {
+        box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      }
+      25% {
+        box-shadow: -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73);
+      }
+      50% {
+        box-shadow: -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223);
+      }
+      75% {
+        box-shadow: 26px -26px #dfdfdf, 26px 26px #4f4d49, -26px 26px #dfdfdf, -26px -26px #4f4d49;
+      }
+    }
+
+    @-webkit-keyframes cssload-spin {
+      0%,
+      100% {
+        box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      }
+      25% {
+        box-shadow: -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73);
+      }
+      50% {
+        box-shadow: -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223);
+      }
+      75% {
+        box-shadow: 26px -26px #dfdfdf, 26px 26px #4f4d49, -26px 26px #dfdfdf, -26px -26px #4f4d49;
+      }
+    }
+
+    @-moz-keyframes cssload-spin {
+      0%,
+      100% {
+        box-shadow: 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223);
+      }
+      25% {
+        box-shadow: -26px 26px rgb(223,223,223), -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73);
+      }
+      50% {
+        box-shadow: -26px -26px rgb(79,77,73), 26px -26px rgb(223,223,223), 26px 26px rgb(79,77,73), -26px 26px rgb(223,223,223);
+      }
+      75% {
+        box-shadow: 26px -26px #dfdfdf, 26px 26px #4f4d49, -26px 26px #dfdfdf, -26px -26px #4f4d49;
+      }
+    }
+  </style>
+
+  <style>
+    @media (min-width: 768px) {
+      .playlist {
+        height: 100vh;
+        overflow-y: scroll;
+      }
+    }
+    button.active {
+      background-color: rgb(190, 190, 190);
+      border: 1px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="vueApp" class="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div id="navbar-collapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Itunes <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" v-on:click="initPlayListFromItunes()">總排行</a></li>
+                  <li><a href="#" v-on:click="initPlayListFromItunes(1253)">國語流行樂</a></li>
+                  <li><a href="#" v-on:click="initPlayListFromItunes(27)">日本流行樂</a></li>
+                  <li><a href="#" v-on:click="initPlayListFromItunes(51)">韓國流行樂</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+    <div class="row">
+      <!-- player -->
+      <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+      <div id="player" class="col-md-8 col-xs-12"></div>
+
+      <div id="playlist" class="col-md-4 col-xs-12 playlist">
+        <div class="row" v-for="(info, index) in playlistInfo">
+
+          <button style="width:100%" v-on:click="clickMusic(index)" v-bind:class="{active: index==nowPlayMusicIdx-1}">
+            <div class="col-md-1 col-xs-1">
+              <p>{{index+1}}</p>
+            </div>
+            <div class="col-md-3 col-xs-3">
+              <img width="100%" v-bind:src="info['im:image'][info['im:image'].length-1]['label']"></img>
+            </div>
+            <div class="col-md-8 col-xs-8">
+              <div class="row">
+                <p>{{info['im:name']['label']}}</p>
+              </div>
+              <div class="row">
+                <p>{{info['im:artist']['label']}}</p>
+              </div>
+              <div class="row">
+                <p>{{info['rights']['label']}}</p>
+              </div>
+            </div>
+          </button>
+
+        </div>
+
+        <div class="cssload-spin-box" v-show="playlistMusicName.length == 0"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- player -->
+  <script type="text/javascript">
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        width: '100%',
+        height: document.getElementById("player").offsetWidth * 0.6,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    function onPlayerStateChange(event) {
+      if(!vueApp.nowMusicPlayed && event.data == YT.PlayerState.PLAYING) {
+        vueApp.nowMusicPlayed = true;
+      }
+      if(event.data == YT.PlayerState.ENDED) {
+        vueApp.searchPlaylistMusic();
+      }
+      //console.log(event.data);
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
+  <script type="text/javascript">
+    var vueApp = new Vue({
+      el: '#vueApp',
+      data: {
+        nowPlayMusicIdx: 0,
+        playlistMusicName: [],
+        playlistInfo: [],
+
+        nowMusicPlayed: false,
+        checkNowMusicPlayedTimer: null
+      },
+      methods: {
+        clearData: function() {
+          this.nowPlayMusicIdx = 0;
+          this.playlistMusicName = [];
+          this.playlistInfo = [];
+          this.nowMusicPlayed = false;
+
+          clearTimeout(this.checkNowMusicPlayedTimer);
+          this.checkNowMusicPlayedTimer = null;
+        },
+        initPlayListFromItunes: function(genreId=null) {
+          this.clearData();
+
+          var baseUrl = "https://itunes.apple.com/tw/rss/topsongs/limit=100/";
+          if(genreId) { //1253國語流行
+            baseUrl += "genre="+genreId+'/';
+          }
+          $.getJSON(baseUrl+ "json?l=zh",
+          function(jsonData) {
+            console.log(jsonData);
+            if(jsonData && 'feed' in jsonData && 'entry' in jsonData['feed']) {
+              for(var idx in jsonData['feed']['entry']) {
+                var entry = jsonData['feed']['entry'][idx];
+                //remove () content except it has 'feat' inside
+                var originContent = entry['im:name']['label'].split('(')[0]
+                var plusContent = entry['im:name']['label'].split('(')[1]
+                if(plusContent && plusContent.indexOf('feat') !== -1) {
+                  this.playlistMusicName.push(entry['im:name']['label'] + ' - ' + entry['im:artist']['label']);
+                } else {
+                  this.playlistMusicName.push(originContent + ' - ' + entry['im:artist']['label']);
+                }
+                this.playlistInfo.push(entry);
+                //console.log(entry['title']['label']);
+              }
+              this.searchPlaylistMusic();
+            }
+            //console.log(this.playlistInfo);
+          }.bind(this));
+        },
+        checkNowMusicPlayed: function() {
+          console.log(this.nowMusicPlayed);
+          if(!this.nowMusicPlayed) { //music not played
+            this.searchPlaylistMusic();
+          }
+        },
+        clickMusic: function(index) {
+          clearTimeout(this.checkNowMusicPlayedTimer);
+          this.searchPlaylistMusic(index);
+        },
+        searchPlaylistMusic: function(index=null) {
+          if(!player || !player.loadVideoById) {
+            setTimeout(this.searchPlaylistMusic, 100);
+          } else {
+            if(index!=null) {
+              this.nowPlayMusicIdx = index;
+            }
+            if(this.playlistMusicName.length > 0 && this.playlistMusicName.length > this.nowPlayMusicIdx) {
+              console.log(this.nowPlayMusicIdx);
+              console.log(this.playlistMusicName[this.nowPlayMusicIdx]);
+              this.search(this.playlistMusicName[this.nowPlayMusicIdx]);
+              this.nowPlayMusicIdx = this.nowPlayMusicIdx + 1;
+            }
+          }
+        },
+        search: function(title) {
+          $.getJSON("https://14ra0aryil.execute-api.ap-northeast-1.amazonaws.com/prod/music?title="+encodeURIComponent(title),
+          function(jsonData) {
+            console.log(jsonData);
+            if(jsonData && 'data' in jsonData && 'YoutubeVideoId' in jsonData['data']) {
+              this.nowMusicPlayed = false;
+              player.loadVideoById(jsonData['data']['YoutubeVideoId']);
+              console.log(jsonData['data']['YoutubeVideoId']);
+              this.checkNowMusicPlayedTimer = setTimeout(this.checkNowMusicPlayed, 3000);
+            } else { //not found
+              this.searchPlaylistMusic();
+            }
+          }.bind(this));
+        },
+      }
+    });
+    vueApp.initPlayListFromItunes();
+  </script>
+
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
