@@ -175,7 +175,7 @@
               <p>{{index+1}}</p>
             </div>
             <div class="col-md-3 col-xs-3">
-              <!-- <img width="100%" v-bind:src="info['im:image'][info['im:image'].length-1]['label']" /> -->
+              <img width="100%" v-bind:src="info['im:image'][info['im:image'].length-1]['label']" />
             </div>
             <div class="col-md-8 col-xs-8">
               <div class="row">
@@ -210,7 +210,7 @@
 
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
-    var player;
+    var player = undefined;
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
         width: '100%',
@@ -305,7 +305,7 @@
           this.searchPlaylistMusic(index);
         },
         searchPlaylistMusic: function(index) {
-          if(!player || !player.loadVideoById) {
+          if(player == undefined) {
             setTimeout(this.searchPlaylistMusic, 100);
           } else {
             if(index != undefined) {
