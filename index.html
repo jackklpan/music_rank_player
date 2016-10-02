@@ -116,6 +116,10 @@
   </style>
 
   <style>
+    [v-cloak] {
+      display: none;
+    }
+
     @media (min-width: 768px) {
       .playlist {
         height: 100vh;
@@ -168,7 +172,7 @@
       <div id="player" class="col-md-8 col-xs-12"></div>
 
       <div id="playlist" class="col-md-4 col-xs-12 playlist">
-        <div class="row" v-for="(info, index) in playlistInfo">
+        <div class="row" v-for="(info, index) in playlistInfo" v-cloak>
 
           <button style="width:100%" v-on:click="clickMusic(index)" v-bind:class="{active: index==nowPlayMusicIdx-1}">
             <div class="col-md-1 col-xs-1">
