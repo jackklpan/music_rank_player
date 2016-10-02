@@ -258,6 +258,13 @@
         nowMusicPlayed: false,
         checkNowMusicPlayedTimer: null
       },
+      watch: {
+        'nowPlayMusicIdx': function(val, oldVal) {
+          if(this.playlistMusicName.length > val) {
+            document.title = this.playlistMusicName[val];
+          }
+        },
+      },
       methods: {
         clearData: function() {
           this.nowPlayMusicIdx = 0;
