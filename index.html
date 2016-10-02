@@ -199,8 +199,10 @@
     </div>
   </div>
 
-  <!-- player -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
   <script type="text/javascript">
+    // player
     // 2. This code loads the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
 
@@ -241,11 +243,7 @@
     function stopVideo() {
       player.stopVideo();
     }
-  </script>
 
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
-  <script type="text/javascript">
     var vueApp = new Vue({
       el: '#vueApp',
       data: {
@@ -338,8 +336,6 @@
     });
     vueApp.initPlayListFromItunes();
   </script>
-
-  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
