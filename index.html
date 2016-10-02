@@ -211,6 +211,7 @@
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
     var player = undefined;
+    var playerReady = false;
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
         width: '100%',
@@ -224,7 +225,7 @@
 
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
-
+      playerReady = true;
     }
 
     // 5. The API calls this function when the player's state changes.
@@ -305,7 +306,7 @@
           this.searchPlaylistMusic(index);
         },
         searchPlaylistMusic: function(index) {
-          if(player == undefined) {
+          if(playerReady == false) {
             setTimeout(this.searchPlaylistMusic, 100);
           } else {
             if(index != undefined) {
